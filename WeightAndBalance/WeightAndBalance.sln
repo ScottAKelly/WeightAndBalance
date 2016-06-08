@@ -5,6 +5,12 @@ VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeightAndBalance", "WeightAndBalance\WeightAndBalance.csproj", "{6F30D214-9900-48B9-B735-7D6A5D13DA54}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeightAndBalance.Services", "WeightAndBalance.Services\WeightAndBalance.Services.csproj", "{7453B57A-4F7C-4F9B-926D-F77E57B2F91B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeightAndBalance.Data", "WeightAndBalance.Data\WeightAndBalance.Data.csproj", "{129ECCF8-58FD-4265-A7C8-1D910309E3AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeightAndBalance.Models", "WeightAndBalance.Models\WeightAndBalance.Models.csproj", "{D7D27BE3-8A34-4752-A6B7-63F3424C6348}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +21,18 @@ Global
 		{6F30D214-9900-48B9-B735-7D6A5D13DA54}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F30D214-9900-48B9-B735-7D6A5D13DA54}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F30D214-9900-48B9-B735-7D6A5D13DA54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7453B57A-4F7C-4F9B-926D-F77E57B2F91B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7453B57A-4F7C-4F9B-926D-F77E57B2F91B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7453B57A-4F7C-4F9B-926D-F77E57B2F91B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7453B57A-4F7C-4F9B-926D-F77E57B2F91B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{129ECCF8-58FD-4265-A7C8-1D910309E3AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{129ECCF8-58FD-4265-A7C8-1D910309E3AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{129ECCF8-58FD-4265-A7C8-1D910309E3AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{129ECCF8-58FD-4265-A7C8-1D910309E3AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7D27BE3-8A34-4752-A6B7-63F3424C6348}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7D27BE3-8A34-4752-A6B7-63F3424C6348}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7D27BE3-8A34-4752-A6B7-63F3424C6348}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7D27BE3-8A34-4752-A6B7-63F3424C6348}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
