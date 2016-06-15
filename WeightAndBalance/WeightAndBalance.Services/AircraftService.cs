@@ -47,6 +47,7 @@ namespace WeightAndBalance.Services
                         TakeOffWeight = e.TakeOffWeight,
                         TakeOffWeightMoment = e.TakeOffWeightMoment,
                         ZeroFuelWeight = e.ZeroFuelWeight,
+                        ZeroFuelWeightMax = e.ZeroFuelWeightMax,
                         ZeroFuelWeightMoment = e.ZeroFuelWeightMoment
                     });
             }
@@ -86,6 +87,7 @@ namespace WeightAndBalance.Services
                     TakeOffWeight = aircraft.TakeOffWeight,
                     TakeOffWeightMoment = aircraft.TakeOffWeightMoment,
                     ZeroFuelWeight = aircraft.ZeroFuelWeight,
+                    ZeroFuelWeightMax = aircraft.ZeroFuelWeightMax,
                     ZeroFuelWeightMoment = aircraft.ZeroFuelWeightMoment
                 };
                     

@@ -174,9 +174,19 @@
   <ItemGroup>
     <Compile Include="AircraftEntity.cs" />
     <Compile Include="IdentityModel.cs" />
-    <Compile Include="Payload.cs" />
-    <Compile Include="PayloadItems.cs" />
+    <Compile Include="Migrations\201606091552060_InitialMigration.cs" />
+    <Compile Include="Migrations\201606091552060_InitialMigration.Designer.cs">
+      <DependentUpon>201606091552060_InitialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="PayloadEntity.cs" />
+    <Compile Include="PayloadItemsEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201606091552060_InitialMigration.resx">
+      <DependentUpon>201606091552060_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

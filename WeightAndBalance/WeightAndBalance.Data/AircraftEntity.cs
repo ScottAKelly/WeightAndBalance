@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -18,6 +19,7 @@ namespace WeightAndBalance.Data
         public string AircraftModel { get; set; }
         public int BasicEmptyWeight { get; set; }
         public float BasicEmptyweightMoment { get; set; }
+        public int ZeroFuelWeightMax { get; set; }
         public int ZeroFuelWeight { get; set; }
         public float ZeroFuelWeightMoment { get; set; }
         public int FuelLoad { get; set; }
@@ -34,7 +36,9 @@ namespace WeightAndBalance.Data
         public int LessFuelToDestination { get; set; }
         public int LandingWeight { get; set; }
         public float LandingWeightMoment { get; set; }
-        public IEnumerable<PayloadItems> PayloadItems { get; set; }
-        public Payload Payload { get; set; }
+        [ForeignKey("PayloadItems")]
+        public IEnumerable<PayloadItemsEntity> PayloadItems { get; set; }
+        [ForeignKey("Payload")]
+        public PayloadEntity Payload { get; set; }
     }
 }

@@ -16,8 +16,10 @@ namespace WeightAndBalance.Models
         public string AircraftModel { get; set; }
         public int BasicEmptyWeight { get; set; }
         public float BasicEmptyweightMoment { get; set; }
+        public int ZeroFuelWeightMax { get; set; }
         public int ZeroFuelWeight { get; set; }
         public float ZeroFuelWeightMoment { get; set; }
+        [Display(Name = "Fuel Load (lbs.)")]
         public int FuelLoad { get; set; }
         public float FuelLoadMoment { get; set; }
         public float FuelLoadArm { get; set; }
@@ -29,10 +31,11 @@ namespace WeightAndBalance.Models
         public int MaxTakeOffWeight { get; set; }
         public int TakeOffWeight { get; set; }
         public float TakeOffWeightMoment { get; set; }
+        [Display(Name = "Less fuel to destination (lbs.)")]
         public int LessFuelToDestination { get; set; }
         public int LandingWeight { get; set; }
         public float LandingWeightMoment { get; set; }
-        public IEnumerable<PayloadItems> PayloadItems { get; set; }
-        public Payload Payload { get; set; }
+        public IEnumerable<PayloadItemsEntity> PayloadItems { get; set; }
+        public PayloadEntity Payload { get; set; }
     }
 }

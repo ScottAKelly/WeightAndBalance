@@ -30,14 +30,14 @@ namespace WeightAndBalance.Data
             return new CalculatorDbContext();
         }
 
-        public class CalculatorDbContext : IdentityDbContext<CalculatorUser>
+        public class CalculatorDbContext : IdentityDbContext
         {
-            public CalculatorDbContext() : base ("DefaultConnection", throwIfV1Schema: false)
+            public CalculatorDbContext() : base ("DefaultConnection")
             { }
 
             public DbSet<AircraftEntity> Aircraft { get; set; }
-            public DbSet<PayloadItems> PayloadItems { get; set; }
-            public DbSet<Payload> Payload { get; set; }
+            public DbSet<PayloadItemsEntity> PayloadItems { get; set; }
+            public DbSet<PayloadEntity> Payload { get; set; }
         }
     }
 }
