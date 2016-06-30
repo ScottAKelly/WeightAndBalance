@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeightAndBalanceApp", "WeightAndBalanceApp\WeightAndBalanceApp.csproj", "{80C8AD69-DE15-474E-99C3-CF22708C2217}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeightAndBalanceApp.Data", "WeightAndBalanceApp.Data\WeightAndBalanceApp.Data.csproj", "{4EECF00B-9BFD-4444-967A-38035DF19108}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeightAndBalanceApp.Services", "WeightAndBalanceApp.Services\WeightAndBalanceApp.Services.csproj", "{9B017C24-B13B-4323-8F2D-6E95C115C138}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeightAndBalanceApp.Models", "WeightAndBalanceApp.Models\WeightAndBalanceApp.Models.csproj", "{C6A78FD9-5CB9-43D6-BEA2-C229FEED17A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeightAndBalanceApp.BusinessLogic", "WeightAndBalanceApp.BusinessLogic\WeightAndBalanceApp.BusinessLogic.csproj", "{5914FBEA-88DA-4D90-BA3C-210F2739FA5A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{80C8AD69-DE15-474E-99C3-CF22708C2217}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80C8AD69-DE15-474E-99C3-CF22708C2217}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80C8AD69-DE15-474E-99C3-CF22708C2217}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80C8AD69-DE15-474E-99C3-CF22708C2217}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EECF00B-9BFD-4444-967A-38035DF19108}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EECF00B-9BFD-4444-967A-38035DF19108}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EECF00B-9BFD-4444-967A-38035DF19108}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EECF00B-9BFD-4444-967A-38035DF19108}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B017C24-B13B-4323-8F2D-6E95C115C138}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B017C24-B13B-4323-8F2D-6E95C115C138}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B017C24-B13B-4323-8F2D-6E95C115C138}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B017C24-B13B-4323-8F2D-6E95C115C138}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6A78FD9-5CB9-43D6-BEA2-C229FEED17A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6A78FD9-5CB9-43D6-BEA2-C229FEED17A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6A78FD9-5CB9-43D6-BEA2-C229FEED17A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6A78FD9-5CB9-43D6-BEA2-C229FEED17A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5914FBEA-88DA-4D90-BA3C-210F2739FA5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5914FBEA-88DA-4D90-BA3C-210F2739FA5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5914FBEA-88DA-4D90-BA3C-210F2739FA5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5914FBEA-88DA-4D90-BA3C-210F2739FA5A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
