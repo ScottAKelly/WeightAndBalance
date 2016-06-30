@@ -71,7 +71,7 @@ namespace WeightAndBalanceApp.Models
         public AircraftEntity Aircraft { get; set; }
     }
 
-    public class PayloadItemsEntity
+    public class PayloadItemsViewModel
     {
         [Key]
         public int PayloadItemId { get; set; }
