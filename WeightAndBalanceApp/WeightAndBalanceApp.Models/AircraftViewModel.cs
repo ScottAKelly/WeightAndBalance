@@ -62,7 +62,28 @@ namespace WeightAndBalanceApp.Models
             {
             }
         }
-        public PayloadEntity Payload { get; set; }
+        public PayloadEntity Payload
+        { get
+            {
+                using (var ctx = new WeightAndBalanceDbContext())
+                {
+                    var payload = ctx.Payload.SingleOrDefault(a => a.PayloadId == AircraftId);
+                        return new PayloadEntity
+                        {
+                            Aircraft = payload.Aircraft,
+                            PayloadItemId = payload.PayloadItemId,
+                            PayloadItems = payload.PayloadItems,
+                            PayloadId = payload.PayloadId,
+                            PayloadArm = payload.PayloadArm,
+                            PayloadMoment = payload.PayloadMoment,
+                            PayloadWeight = payload.PayloadWeight
+                        };
+                }
+            }
+            set
+            {
+            }
+        }
     }
 
     public class PayloadViewModel
