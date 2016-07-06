@@ -47,7 +47,7 @@ namespace WeightAndBalanceApp.Models
             {
                 using(var ctx = new WeightAndBalanceDbContext())
                 {
-                    return ctx.PayloadItems.Select(e => new PayloadItemsEntity
+                    return ctx.PayloadItems.ToList().Select(e => new PayloadItemsEntity
                     {
                         Payload = e.Payload,
                         PayloadItemName = e.PayloadItemName,

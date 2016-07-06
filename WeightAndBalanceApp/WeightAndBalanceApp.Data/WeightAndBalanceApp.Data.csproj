@@ -161,6 +161,10 @@
     <Compile Include="Migrations\201607061558200_updatedforeignKeysAgain.Designer.cs">
       <DependentUpon>201607061558200_updatedforeignKeysAgain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201607061923265_AddedMoreArms.cs" />
+    <Compile Include="Migrations\201607061923265_AddedMoreArms.Designer.cs">
+      <DependentUpon>201607061923265_AddedMoreArms.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PayloadEntity.cs" />
     <Compile Include="PayloadItemsEntity.cs" />
@@ -181,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201607061558200_updatedforeignKeysAgain.resx">
       <DependentUpon>201607061558200_updatedforeignKeysAgain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607061923265_AddedMoreArms.resx">
+      <DependentUpon>201607061923265_AddedMoreArms.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
