@@ -11,8 +11,13 @@ namespace WeightAndBalanceApp.Data
         public float PayloadWeight { get; set; }
         public float PayloadArm { get; set; }
         public float PayloadMoment { get; set; }
-        [ForeignKey("PayloadItems")]
-        public IEnumerable<PayloadItemsEntity> PayloadItems { get; set; }
         public AircraftEntity Aircraft { get; set; }
+        [ForeignKey("PayloadItemId")]
+        public IEnumerable<PayloadItemsEntity> PayloadItems { get; set; }
+        [Display(Name ="Payload Item")]
+        public int PayloadItemId { get; set; }
+
+        
+        
     }
 }

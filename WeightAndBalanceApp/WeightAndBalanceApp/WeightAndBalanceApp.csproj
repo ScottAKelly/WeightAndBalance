@@ -267,6 +267,10 @@
       <Project>{C6A78FD9-5CB9-43D6-BEA2-C229FEED17A5}</Project>
       <Name>WeightAndBalanceApp.Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\WeightAndBalanceApp.Services\WeightAndBalanceApp.Services.csproj">
+      <Project>{9B017C24-B13B-4323-8F2D-6E95C115C138}</Project>
+      <Name>WeightAndBalanceApp.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

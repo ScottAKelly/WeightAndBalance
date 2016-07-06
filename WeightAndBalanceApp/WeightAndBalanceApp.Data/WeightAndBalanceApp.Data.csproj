@@ -153,6 +153,14 @@
     <Compile Include="Migrations\201606302040132_updateForPayload.Designer.cs">
       <DependentUpon>201606302040132_updateForPayload.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201607011824321_EditedForeignKeys.cs" />
+    <Compile Include="Migrations\201607011824321_EditedForeignKeys.Designer.cs">
+      <DependentUpon>201607011824321_EditedForeignKeys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607061558200_updatedforeignKeysAgain.cs" />
+    <Compile Include="Migrations\201607061558200_updatedforeignKeysAgain.Designer.cs">
+      <DependentUpon>201607061558200_updatedforeignKeysAgain.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PayloadEntity.cs" />
     <Compile Include="PayloadItemsEntity.cs" />
@@ -167,6 +175,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606302040132_updateForPayload.resx">
       <DependentUpon>201606302040132_updateForPayload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607011824321_EditedForeignKeys.resx">
+      <DependentUpon>201607011824321_EditedForeignKeys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607061558200_updatedforeignKeysAgain.resx">
+      <DependentUpon>201607061558200_updatedforeignKeysAgain.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

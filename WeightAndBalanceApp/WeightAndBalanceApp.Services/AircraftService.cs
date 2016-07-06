@@ -44,7 +44,7 @@ namespace WeightAndBalanceApp.Services
                         TakeOffWeight = e.TakeOffWeight,
                         TakeOffWeightMoment = e.TakeOffWeightMoment,
                         ZeroFuelWeight = e.ZeroFuelWeight,
-                        ZeroFuelWeightMax = e.ZeroFuelWeightMax,
+                        MaxZeroFuelWeight = e.MaxZeroFuelWeight,
                         ZeroFuelWeightMoment = e.ZeroFuelWeightMoment
                     });
             }
@@ -82,7 +82,7 @@ namespace WeightAndBalanceApp.Services
                     TakeOffWeight = aircraft.TakeOffWeight,
                     TakeOffWeightMoment = aircraft.TakeOffWeightMoment,
                     ZeroFuelWeight = aircraft.ZeroFuelWeight,
-                    ZeroFuelWeightMax = aircraft.ZeroFuelWeightMax,
+                    MaxZeroFuelWeight = aircraft.MaxZeroFuelWeight,
                     ZeroFuelWeightMoment = aircraft.ZeroFuelWeightMoment
                 };
             }
@@ -116,7 +116,7 @@ namespace WeightAndBalanceApp.Services
                         TakeOffWeight = vm.TakeOffWeight,
                         TakeOffWeightMoment = vm.TakeOffWeightMoment,
                         ZeroFuelWeight = vm.ZeroFuelWeight,
-                        ZeroFuelWeightMax = vm.ZeroFuelWeightMax,
+                        MaxZeroFuelWeight = vm.MaxZeroFuelWeight,
                         ZeroFuelWeightMoment = vm.ZeroFuelWeightMoment
                     };
                 ctx.Aircraft.Add(entity);

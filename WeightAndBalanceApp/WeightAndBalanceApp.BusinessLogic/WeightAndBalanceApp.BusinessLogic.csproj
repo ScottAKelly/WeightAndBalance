@@ -81,6 +81,12 @@
     <Compile Include="BalanceCalculation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WeightAndBalanceApp.Data\WeightAndBalanceApp.Data.csproj">
+      <Project>{4EECF00B-9BFD-4444-967A-38035DF19108}</Project>
+      <Name>WeightAndBalanceApp.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
