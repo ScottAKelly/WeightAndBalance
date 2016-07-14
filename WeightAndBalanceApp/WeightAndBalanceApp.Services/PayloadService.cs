@@ -52,6 +52,28 @@ namespace WeightAndBalanceApp.Services
             };
         }
 
+        public IEnumerable<float> GetItemsArms(int aircraftId)
+        {
+            using (var ctx = new WeightAndBalanceDbContext())
+            {
+                var itemArms = ctx.PayloadItems;
+                return itemArms
+                .Where(e => e.PayloadItemId == aircraftId)
+                .Select(
+                    e =>
+                    e.PayloadItemArm)
+                    .ToArray();
+            }
+        }
+
+        //Retrieve all arms for each payload item and add it to a list
+        //var totalItemsValues = new List<PayloadItemsEntity>();
+        //foreach(var item in totalItemsValues)
+        //{
+        //  totalItemsValues.PayloadArm
+        //}
+        //return item.Add();
+
 
     }
 }

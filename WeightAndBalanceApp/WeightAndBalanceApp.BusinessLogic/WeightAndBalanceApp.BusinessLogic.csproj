@@ -86,6 +86,14 @@
       <Project>{4EECF00B-9BFD-4444-967A-38035DF19108}</Project>
       <Name>WeightAndBalanceApp.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\WeightAndBalanceApp.Models\WeightAndBalanceApp.Models.csproj">
+      <Project>{C6A78FD9-5CB9-43D6-BEA2-C229FEED17A5}</Project>
+      <Name>WeightAndBalanceApp.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WeightAndBalanceApp.Services\WeightAndBalanceApp.Services.csproj">
+      <Project>{9b017c24-b13b-4323-8f2d-6e95c115c138}</Project>
+      <Name>WeightAndBalanceApp.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
