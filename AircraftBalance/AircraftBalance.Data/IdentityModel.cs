@@ -21,16 +21,16 @@ namespace AircraftBalance.Data
             }
         }
 
-        public class WeightAndBalanceDbContext : IdentityDbContext<WeightAndBalanceAppUser>
+        public class AircraftBalanceDbContext : IdentityDbContext<WeightAndBalanceAppUser>
         {
-            public WeightAndBalanceDbContext()
+            public AircraftBalanceDbContext()
                 : base("DefaultConnection", throwIfV1Schema: false)
             {
             }
 
-            public static WeightAndBalanceDbContext Create()
+            public static AircraftBalanceDbContext Create()
             {
-                return new WeightAndBalanceDbContext();
+                return new AircraftBalanceDbContext();
             }
 
             // Entities.

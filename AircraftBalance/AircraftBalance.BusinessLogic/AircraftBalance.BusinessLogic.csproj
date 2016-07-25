@@ -110,12 +110,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Calculation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AircraftBalance.Data\AircraftBalance.Data.csproj">
+      <Project>{63C080A0-E8C8-4080-873F-3E09650CCBE7}</Project>
+      <Name>AircraftBalance.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AircraftBalance.Models\AircraftBalance.Models.csproj">
+      <Project>{942EF778-225C-4E35-A48E-F27E8A12F0DA}</Project>
+      <Name>AircraftBalance.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />

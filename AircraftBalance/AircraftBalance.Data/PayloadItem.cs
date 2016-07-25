@@ -14,8 +14,8 @@ namespace AircraftBalance.Data
         public int PayloadItemId { get; set; }
         public string PayloadItemName { get; set; }
         public float PayloadItemWeight { get; set; }
-        public float PayloadItemMoment { get; set; }
         public float PayloadItemArm { get; set; }
+        public float PayloadItemMoment => (PayloadItemArm * PayloadItemWeight) / 100;
 
         [ForeignKey("PayloadId")]
         public Payload Payload { get; set; }
@@ -26,5 +26,12 @@ namespace AircraftBalance.Data
         public Aircraft Aircraft { get; set; }
         [Display(Name = "Aircraft")]
         public int AircraftId { get; set; }
+
+        public PayloadItem(string itemName, float arm, float weight)
+        {
+            PayloadItemName = itemName;
+            PayloadItemArm = arm;
+            PayloadItemWeight = weight;
+        }
     }
 }

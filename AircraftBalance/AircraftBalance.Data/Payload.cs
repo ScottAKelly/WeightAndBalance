@@ -20,5 +20,12 @@ namespace AircraftBalance.Data
         public IEnumerable<PayloadItem> PayloadItems { get; set; }
         [Display(Name = "Payload Item")]
         public int PayloadItemId { get; set; }
+
+        public Payload(float arm, float weight, float moment)
+        {
+            PayloadArm = arm;
+            PayloadWeight = weight;
+            PayloadMoment = moment;
+        }
     }
 }

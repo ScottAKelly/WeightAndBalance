@@ -116,6 +116,10 @@
     <Compile Include="Migrations\201607251939030_initial.Designer.cs">
       <DependentUpon>201607251939030_initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201607252032388_addedConstructors.cs" />
+    <Compile Include="Migrations\201607252032388_addedConstructors.Designer.cs">
+      <DependentUpon>201607252032388_addedConstructors.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Payload.cs" />
     <Compile Include="PayloadItem.cs" />
@@ -128,6 +132,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201607251939030_initial.resx">
       <DependentUpon>201607251939030_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607252032388_addedConstructors.resx">
+      <DependentUpon>201607252032388_addedConstructors.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

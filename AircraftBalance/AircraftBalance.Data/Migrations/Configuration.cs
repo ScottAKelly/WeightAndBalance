@@ -5,14 +5,14 @@ namespace AircraftBalance.Data.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<AircraftBalance.Data.IdentityModel.WeightAndBalanceDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<AircraftBalance.Data.IdentityModel.AircraftBalanceDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(AircraftBalance.Data.IdentityModel.WeightAndBalanceDbContext context)
+        protected override void Seed(AircraftBalance.Data.IdentityModel.AircraftBalanceDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 
@@ -25,7 +25,22 @@ namespace AircraftBalance.Data.Migrations
             //      new Person { FullName = "Brice Lambson" },
             //      new Person { FullName = "Rowan Miller" }
             //    );
-            //
+
+
+
+            context.Aircraft.AddOrUpdate(
+                p => p.AircraftName,
+                new Aircraft
+                {
+                    AircraftId = 1,
+                    AircraftName = "Cessna N580EE",
+                    AircraftMake = "Cessna",
+                    AircraftModel = "XL",
+                    BasicEmptyWeight = 12454,
+                    BasicEmptyweightMoment = 4221285f,
+
+
+                });
         }
     }
 }
