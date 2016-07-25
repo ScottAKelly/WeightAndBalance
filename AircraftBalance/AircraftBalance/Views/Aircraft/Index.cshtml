@@ -1,8 +1,88 @@
 ﻿@model AircraftBalance.Data.Aircraft
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "View";
 }
 
-<h2>Index</h2>
+<h2>View</h2>
+
+
+
+@using (Html.BeginForm("Calculate", "Calculate", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.AircraftId)
+    @Html.HiddenFor(model => model.BasicEmptyWeight)
+    @Html.HiddenFor(model => model.BasicEmptyWeightArm)
+    @Html.HiddenFor(model => model.BasicEmptyweightMoment)
+    @Html.HiddenFor(model => model.FuelLoad)
+    @Html.HiddenFor(model => model.FuelLoadArm)
+    @Html.HiddenFor(model => model.FuelLoadMoment)
+    @Html.HiddenFor(model => model.LandingWeight)
+    @Html.HiddenFor(model => model.LandingWeightMoment)
+    @Html.HiddenFor(model => model.LessFuelForTaxiMoment)
+    @Html.HiddenFor(model => model.LessFuelForTaxiWeight)
+    @Html.HiddenFor(model => model.LessFuelToDestination)
+    @Html.HiddenFor(model => model.MaxRampWeight)
+    @Html.HiddenFor(model => model.MaxTakeOffWeight)
+    @Html.HiddenFor(model => model.RampWeight)
+    @Html.HiddenFor(model => model.RampWeightMoment)
+    @Html.HiddenFor(model => model.TakeOffWeight)
+    @Html.HiddenFor(model => model.TakeOffWeightMoment)
+    @Html.HiddenFor(model => model.ZeroFuelWeight)
+    @Html.HiddenFor(model => model.MaxZeroFuelWeight)
+    @Html.HiddenFor(model => model.ZeroFuelWeightMoment)
+
+
+
+    <div class="form-horizontal">
+        <h3>@Html.DisplayFor(model => model.AircraftName)</h3>
+        <h4>@Html.DisplayFor(model => model.AircraftMake)</h4>
+        <h4>@Html.DisplayFor(model => model.AircraftModel)</h4>
+        <hr />
+        @foreach (var item in Model.PayloadItems)
+        {
+            <div>
+                @Html.LabelFor(modelItem => item.PayloadItemName, htmlAttributes: new { @class = "control-label col-md-2" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(modelItem => item.PayloadItemWeight)
+                <div class="col-md-10">
+                    @Html.EditorFor(modelItem => item.PayloadItemWeight, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(modelItem => item.PayloadItemWeight, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        }
+        <div class="form-group">
+            @Html.LabelFor(model => model.FuelLoad, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FuelLoad, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FuelLoad, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.LessFuelToDestination, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.LessFuelToDestination, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.LessFuelToDestination, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Calculate" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+
 

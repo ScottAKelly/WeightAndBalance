@@ -38,9 +38,15 @@ namespace AircraftBalance.Data.Migrations
                     AircraftModel = "XL",
                     BasicEmptyWeight = 12454,
                     BasicEmptyweightMoment = 4221285f,
-
-
+                    LessFuelForTaxiWeight = 200,
+                    LessFuelForTaxiMoment = 656,
+                    MaxRampWeight = 20200,
+                    MaxTakeOffWeight = 20000,
+                    MaxZeroFuelWeight = 15000,
+                    MaxLandingWeight = 18700,
+                    FuelLoadArm = 326.9228f,
                 });
+
         }
     }
 }
