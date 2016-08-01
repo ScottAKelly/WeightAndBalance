@@ -47,6 +47,126 @@ namespace AircraftBalance.Data.Migrations
                     FuelLoadArm = 326.9228f,
                 });
 
+
+            context.Aircraft.AddOrUpdate(
+                p => p.AircraftName,
+                new Aircraft
+                {
+                    AircraftId = 2,
+                    AircraftName = "",
+                    AircraftMake = "",
+                    AircraftModel = "",
+                    BasicEmptyWeight = 0,
+                    BasicEmptyweightMoment = 0,
+                    LessFuelForTaxiWeight = 0,
+                    LessFuelForTaxiMoment = 0,
+                    MaxRampWeight = 0,
+                    MaxTakeOffWeight = 0,
+                    MaxZeroFuelWeight = 0,
+                    MaxLandingWeight = 0,
+                    FuelLoadArm = 0.0f,
+                });
+
+
+            context.Aircraft.AddOrUpdate(
+                p => p.AircraftName,
+                new Aircraft
+                {
+                    AircraftId = 3,
+                    AircraftName = "",
+                    AircraftMake = "",
+                    AircraftModel = "",
+                    BasicEmptyWeight = 0,
+                    BasicEmptyweightMoment = 0,
+                    LessFuelForTaxiWeight = 0,
+                    LessFuelForTaxiMoment = 0,
+                    MaxRampWeight = 0,
+                    MaxTakeOffWeight = 0,
+                    MaxZeroFuelWeight = 0,
+                    MaxLandingWeight = 0,
+                    FuelLoadArm = 0.0f,
+                });
+
+
+            context.Aircraft.AddOrUpdate(
+                p => p.AircraftName,
+                new Aircraft
+                {
+                    AircraftId = 4,
+                    AircraftName = "",
+                    AircraftMake = "",
+                    AircraftModel = "",
+                    BasicEmptyWeight = 0,
+                    BasicEmptyweightMoment = 0,
+                    LessFuelForTaxiWeight = 0,
+                    LessFuelForTaxiMoment = 0,
+                    MaxRampWeight = 0,
+                    MaxTakeOffWeight = 0,
+                    MaxZeroFuelWeight = 0,
+                    MaxLandingWeight = 0,
+                    FuelLoadArm = 0.0f,
+                });
+
+
+            context.Aircraft.AddOrUpdate(
+                p => p.AircraftName,
+                new Aircraft
+                {
+                    AircraftId = 5,
+                    AircraftName = "",
+                    AircraftMake = "",
+                    AircraftModel = "",
+                    BasicEmptyWeight = 0,
+                    BasicEmptyweightMoment = 0,
+                    LessFuelForTaxiWeight = 0,
+                    LessFuelForTaxiMoment = 0,
+                    MaxRampWeight = 0,
+                    MaxTakeOffWeight = 0,
+                    MaxZeroFuelWeight = 0,
+                    MaxLandingWeight = 0,
+                    FuelLoadArm = 0.0f,
+                });
+
+
+            context.Aircraft.AddOrUpdate(
+                p => p.AircraftName,
+                new Aircraft
+                {
+                    AircraftId = 6,
+                    AircraftName = "",
+                    AircraftMake = "",
+                    AircraftModel = "",
+                    BasicEmptyWeight = 0,
+                    BasicEmptyweightMoment = 0,
+                    LessFuelForTaxiWeight = 0,
+                    LessFuelForTaxiMoment = 0,
+                    MaxRampWeight = 0,
+                    MaxTakeOffWeight = 0,
+                    MaxZeroFuelWeight = 0,
+                    MaxLandingWeight = 0,
+                    FuelLoadArm = 0.0f,
+                });
+
+
+            context.Aircraft.AddOrUpdate(
+                p => p.AircraftName,
+                new Aircraft
+                {
+                    AircraftId = 7,
+                    AircraftName = "",
+                    AircraftMake = "",
+                    AircraftModel = "",
+                    BasicEmptyWeight = 0,
+                    BasicEmptyweightMoment = 0,
+                    LessFuelForTaxiWeight = 0,
+                    LessFuelForTaxiMoment = 0,
+                    MaxRampWeight = 0,
+                    MaxTakeOffWeight = 0,
+                    MaxZeroFuelWeight = 0,
+                    MaxLandingWeight = 0,
+                    FuelLoadArm = 0.0f,
+                });
+
         }
     }
 }
