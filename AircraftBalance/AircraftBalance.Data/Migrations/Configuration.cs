@@ -33,7 +33,7 @@ namespace AircraftBalance.Data.Migrations
                 new Aircraft
                 {
                     AircraftId = 1,
-                    AircraftName = "Cessna N580EE",
+                    AircraftName = "N580EE",
                     AircraftMake = "Cessna",
                     AircraftModel = "XL",
                     BasicEmptyWeight = 12454,

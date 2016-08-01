@@ -13,12 +13,17 @@ namespace AircraftBalance.BusinessLogic
 
         public static Payload CreateFromItems(IEnumerable<PayloadItem> items)
         {
-            var arm = items.Average(i => i.PayloadItemArm);
             var weight = items.Sum(i => i.PayloadItemWeight);
             var moment = items.Sum(i => i.PayloadItemMoment);
+            var arm = (moment / weight);
 
             return new Payload(arm, weight, moment);
         }
+
+        //public static Calculate(Payload payload, Aircraft aircraft)
+        //{
+            
+        //}
 
         
 

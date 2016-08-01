@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using WeightAndBalanceApp.Data;
+using WeightAndBalanceApp.Models;
 using WeightAndBalanceApp.Services;
 
 namespace WeightAndBalanceApp.BusinessLogic
@@ -21,7 +22,7 @@ namespace WeightAndBalanceApp.BusinessLogic
 
         //Create a method to calculate the payload from the payload items. Then use that method in a different method to find CG's.
 
-        public float DoMath(float basicEmptyWeight, float basicEmptyWeightMoment, float basicEmptyWeightArm, int zeroFuelWeight, float zeroFuelWeightArm, float zeroFuelWeightMoment, int fuelLoad, float fuelLoadMoment, float fuelLoadArm, float rampWeight, float rampWeightArm, float rampWeightMoment, int lessFuelForTaxiWeight, float lessFuelForTaxiArm, float lessFuelForTaxiMoment, float takeOffWeight, float takeOffWeightMoment, float takeOffWeightArm, int lessFuelToDestination, int landingWeight, float landingWeightArm, float landingWeightMoment, float maxZeroFuelWeight, float maxRampWeight, float maxTakeOffWeight, PayloadEntity payload, PayloadItemsEntity payloadItems)
+        public float DoMath(AircraftViewModel aircraftVM)
         {
             float ZeroFuelWeightForwardCG = 0;
             float ZeroFuelWeightAftCG = 0;

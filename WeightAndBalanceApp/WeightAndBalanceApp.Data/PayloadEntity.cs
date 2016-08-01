@@ -18,21 +18,21 @@ namespace WeightAndBalanceApp.Data
         [Display(Name ="Payload Item")]
         public int PayloadItemId { get; set; }
         
-        private PayloadEntity(float arm, float weight, float moment)
-        {
-            PayloadArm = arm;
-            PayloadWeight = weight;
-            PayloadMoment = moment;
-        }
+        //private PayloadEntity(float arm, float weight, float moment)
+        //{
+        //    PayloadArm = arm;
+        //    PayloadWeight = weight;
+        //    PayloadMoment = moment;
+        //}
 
-        public static PayloadEntity CreateFromItems(IEnumerable<PayloadItemsEntity> items)
-        {
-            var arm = items.Average(i => i.Arm);
-            var weight = items.Sum(i => i.Weight);
-            var moment = items.Sum(i => i.Moment);
+        //public static PayloadEntity CreateFromItems(IEnumerable<PayloadItemsEntity> items)
+        //{
+        //    var arm = items.Average(i => i.Arm);
+        //    var weight = items.Sum(i => i.Weight);
+        //    var moment = items.Sum(i => i.Moment);
 
-            return new Payload(arm, weight, moment);
-        }
+        //    return new Payload(arm, weight, moment);
+        //}
 
     }
 }

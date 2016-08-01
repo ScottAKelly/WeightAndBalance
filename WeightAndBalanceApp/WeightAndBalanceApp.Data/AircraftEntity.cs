@@ -47,11 +47,13 @@ namespace WeightAndBalanceApp.Data
         public float LandingWeightForwardCG { get; set; }
         public float LandingWeightAftCG { get; set; }
 
+        //Foreign Key info for payload items
         [ForeignKey("PayloadItemId")]
         public IEnumerable<PayloadItemsEntity> PayloadItems { get; set; }
         [Display(Name ="Payload Item")]
         public int PayloadItemId { get; set; }
 
+        //Foreign Key info for the payload
         [ForeignKey("PayLoadId")]
         public PayloadEntity Payload { get; set; }
         [Display(Name ="Payload")]

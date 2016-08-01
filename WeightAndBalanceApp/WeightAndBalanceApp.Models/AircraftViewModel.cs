@@ -42,10 +42,11 @@ namespace WeightAndBalanceApp.Models
         public float LandingWeightArm { get; set; }
         public float LandingWeightMoment { get; set; }
         public IEnumerable<PayloadItemsEntity> PayloadItems
-        {   get
-                //Gets the Payload Item Information
+        {
+            get
+            //Gets the Payload Item Information
             {
-                using(var ctx = new WeightAndBalanceDbContext())
+                using (var ctx = new WeightAndBalanceDbContext())
                 {
                     return ctx.PayloadItems.ToList().Select(e => new PayloadItemsEntity
                     {
@@ -63,43 +64,38 @@ namespace WeightAndBalanceApp.Models
             }
         }
         public PayloadEntity Payload
-        { get
+        {
+            get
             {
                 using (var ctx = new WeightAndBalanceDbContext())
                 {
                     var payload = ctx.Payload.SingleOrDefault(a => a.PayloadId == AircraftId);
-                        return new PayloadEntity
-                        {
-                            Aircraft = payload.Aircraft,
-                            PayloadItemId = payload.PayloadItemId,
-                            PayloadItems = payload.PayloadItems,
-                            PayloadId = payload.PayloadId,
-                            PayloadArm = payload.PayloadArm,
-                            PayloadMoment = payload.PayloadMoment,
-                            PayloadWeight = payload.PayloadWeight
-                        };
+                    return new PayloadEntity
+                    {
+                        Aircraft = payload.Aircraft,
+                        PayloadItemId = payload.PayloadItemId,
+                        PayloadItems = payload.PayloadItems,
+                        PayloadId = payload.PayloadId,
+                        PayloadArm = payload.PayloadArm,
+                        PayloadMoment = payload.PayloadMoment,
+                        PayloadWeight = payload.PayloadWeight
+                    };
                 }
             }
             set
             {
             }
         }
-    }
 
-    public class PayloadViewModel
-    {
         public int PayloadId { get; set; }
         public float PayloadWeight { get; set; }
         public float PayloadArm { get; set; }
         public float PayloadMoment { get; set; }
-    }
 
-    public class PayloadItemsViewModel
-    {
         public int PayloadItemId { get; set; }
         public float PayloadItemWeight { get; set; }
         public float PayloadItemMoment { get; set; }
         public float PayloadItemArm { get; set; }
-        public string PayloadItemName { get; internal set; }
+        public string PayloadItemName { get; set; }
     }
 }

@@ -33,24 +33,24 @@ namespace WeightAndBalanceApp.Services
             }
         }
 
-        public PayloadViewModel GetPayloadById(int aircraftId)
-        {
-            PayloadEntity entity;
-            using (var ctx = new WeightAndBalanceDbContext())
-            {
-                entity =
-                    ctx
-                    .Payload
-                    .SingleOrDefault(e => e.PayloadId == aircraftId);
-            }
-            return new PayloadViewModel
-            {
-                PayloadId = entity.PayloadId,
-                PayloadArm = entity.PayloadArm,
-                PayloadMoment = entity.PayloadMoment,
-                PayloadWeight = entity.PayloadWeight
-            };
-        }
+        //public PayloadViewModel GetPayloadById(int aircraftId)
+        //{
+        //    PayloadEntity entity;
+        //    using (var ctx = new WeightAndBalanceDbContext())
+        //    {
+        //        entity =
+        //            ctx
+        //            .Payload
+        //            .SingleOrDefault(e => e.PayloadId == aircraftId);
+        //    }
+        //    return new PayloadViewModel
+        //    {
+        //        PayloadId = entity.PayloadId,
+        //        PayloadArm = entity.PayloadArm,
+        //        PayloadMoment = entity.PayloadMoment,
+        //        PayloadWeight = entity.PayloadWeight
+        //    };
+        //}
 
         public IEnumerable<float> GetItemsArms(int aircraftId)
         {
