@@ -38,6 +38,8 @@ namespace AircraftBalance.Models
         public float LandingWeightMoment { get; set; }
 
         //Max value properties
+        public int MaxLandingWeight { get; set; }
+        public int MaxRampWeight { get; set; }
         public int MaxTakeOffWeight { get; set; }
         public int MaxZeroFuelWeight { get; set; }
         public float ZeroFuelWeightForwardCG { get; set; }

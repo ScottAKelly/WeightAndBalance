@@ -19,26 +19,26 @@ namespace AircraftBalance.Data
         [Required]
         public string AircraftModel { get; set; }
         public int BasicEmptyWeight { get; set; }
-        public float BasicEmptyWeightArm => (BasicEmptyweightMoment / BasicEmptyWeight) / 10;
+        public float BasicEmptyWeightArm => (BasicEmptyweightMoment / BasicEmptyWeight);
         public float BasicEmptyweightMoment { get; set; }
         public int ZeroFuelWeight { get; set; }
-        public float ZeroFuelWeightArm => (ZeroFuelWeightMoment / ZeroFuelWeight) / 10;
+        public float ZeroFuelWeightArm => (ZeroFuelWeightMoment / ZeroFuelWeight);
         public float ZeroFuelWeightMoment { get; set; }
         public int FuelLoad { get; set; }
-        public float FuelLoadMoment => (FuelLoad * FuelLoadArm) / 10;
+        public float FuelLoadMoment => (FuelLoad * FuelLoadArm);
         public float FuelLoadArm { get; set; }
         public int RampWeight { get; set; }
-        public float RampWeightArm => (RampWeightMoment / RampWeight) / 10;
+        public float RampWeightArm => (RampWeightMoment / RampWeight);
         public float RampWeightMoment { get; set; }
         public int LessFuelForTaxiWeight { get; set; }
-        public float LessFuelForTaxiArm => (LessFuelForTaxiMoment / LessFuelForTaxiWeight) / 10;
+        public float LessFuelForTaxiArm => (LessFuelForTaxiMoment / LessFuelForTaxiWeight);
         public float LessFuelForTaxiMoment { get; set; }
         public int TakeOffWeight { get; set; }
-        public float TakeOffWeightArm => (TakeOffWeightMoment / TakeOffWeight) / 10;
+        public float TakeOffWeightArm => (TakeOffWeightMoment / TakeOffWeight);
         public float TakeOffWeightMoment { get; set; }
         public int LessFuelToDestination { get; set; }
         public int LandingWeight { get; set; }
-        public float LandingWeightArm => (LandingWeightMoment / LandingWeight) / 10;
+        public float LandingWeightArm => (LandingWeightMoment / LandingWeight);
         public float LandingWeightMoment { get; set; }
 
         //Max and min values
