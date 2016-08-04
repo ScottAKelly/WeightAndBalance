@@ -1,5 +1,6 @@
 ﻿using AircraftBalance.Data;
 using AircraftBalance.Models;
+using AircraftBalance.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace AircraftBalance.BusinessLogic
 {
     public class Calculation
     {
+        private static AircraftService _svc = new AircraftService();
 
         public static Payload CreateFromItems(IEnumerable<PayloadItem> items)
         {
@@ -19,10 +21,37 @@ namespace AircraftBalance.BusinessLogic
 
             return new Payload(arm, weight, moment);
         }
-
-        //public static Calculate(Payload payload, Aircraft aircraft)
+        
+        //public static double Calculate(Payload payload, Aircraft aircraft)
         //{
-            
+        //    var plane = _svc.GetAircraftByID(aircraft.AircraftId);
+
+        //    //var zeroFuelAftCg = aircraft.ZeroFuelWeightAftCG;
+        //    //var zeroFuelFwdCg = aircraft.ZeroFuelWeightForwardCG;
+        //    //var takeoffAftCg = aircraft.TakeoffWeightAftCG;
+        //    //var takeoffFwdCg = aircraft.TakeoffWeightForwardCG;
+        //    //var landingAftCg = aircraft.LandingWeightAftCG;
+        //    //var landingFwdCg = aircraft.LandingWeightForwardCG;
+
+        //    var zeroFuelCg = aircraft.FuelLoadArm;
+        //    var takeoffCg = aircraft.RampWeightArm;
+        //    var landingCg = aircraft.LandingWeightArm;
+
+        //    // Calculate all the weights.
+        //    aircraft.ZeroFuelWeight = (aircraft.BasicEmptyWeight + payload.PayloadWeight);
+        //    aircraft.RampWeight = (aircraft.ZeroFuelWeight + aircraft.FuelLoad);
+        //    aircraft.TakeOffWeight = (aircraft.RampWeight - aircraft.LessFuelForTaxiWeight);
+        //    aircraft.LandingWeight = (aircraft.TakeOffWeight - aircraft.LessFuelToDestination);
+
+
+        //    // Calculate all of the moments.
+        //    aircraft.ZeroFuelWeightMoment = (aircraft.BasicEmptyweightMoment + payload.PayloadMoment);
+        //    aircraft.FuelLoadMoment = (aircraft.FuelLoad * aircraft.FuelLoadArm);
+        //    aircraft.RampWeightMoment = (aircraft.ZeroFuelWeightMoment + aircraft.FuelLoadMoment);
+        //    aircraft.TakeOffWeightMoment = (aircraft.RampWeightMoment - aircraft.LessFuelForTaxiMoment);
+        //    aircraft.LandingWeightMoment = (aircraft.LandingWeight * aircraft.LandingWeightArm);
+
+
         //}
 
         

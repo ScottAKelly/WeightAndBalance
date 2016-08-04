@@ -55,7 +55,29 @@ namespace AircraftBalance.Services
                 var aircraft = ctx.Aircraft.SingleOrDefault(e => e.AircraftId == id);
                 return new Aircraft
                 {
-
+                    AircraftId = aircraft.AircraftId,
+                    AircraftMake = aircraft.AircraftMake,
+                    AircraftModel = aircraft.AircraftModel,
+                    AircraftName = aircraft.AircraftName,
+                    BasicEmptyWeight = aircraft.BasicEmptyWeight,
+                    BasicEmptyweightMoment = aircraft.BasicEmptyweightMoment,
+                    FuelLoad = aircraft.FuelLoad,
+                    FuelLoadArm = aircraft.FuelLoadArm,
+                    LandingWeight = aircraft.LandingWeight,
+                    LandingWeightMoment = aircraft.LandingWeightMoment,
+                    LessFuelForTaxiMoment = aircraft.LessFuelForTaxiMoment,
+                    LessFuelForTaxiWeight = aircraft.LessFuelForTaxiWeight,
+                    LessFuelToDestination = aircraft.LessFuelToDestination,
+                    MaxLandingWeight = aircraft.MaxLandingWeight,
+                    MaxRampWeight = aircraft.MaxRampWeight,
+                    MaxTakeOffWeight = aircraft.MaxTakeOffWeight,
+                    MaxZeroFuelWeight = aircraft.MaxZeroFuelWeight,
+                    RampWeight = aircraft.RampWeight,
+                    RampWeightMoment = aircraft.RampWeightMoment,
+                    TakeOffWeight = aircraft.TakeOffWeight,
+                    TakeOffWeightMoment = aircraft.TakeOffWeightMoment,
+                    ZeroFuelWeight = aircraft.ZeroFuelWeight,
+                    ZeroFuelWeightMoment = aircraft.ZeroFuelWeightMoment,
                 };
             }
         }

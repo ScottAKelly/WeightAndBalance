@@ -18,40 +18,40 @@ namespace AircraftBalance.Data
         public string AircraftMake { get; set; }
         [Required]
         public string AircraftModel { get; set; }
-        public int BasicEmptyWeight { get; set; }
-        public float BasicEmptyWeightArm => (BasicEmptyweightMoment / BasicEmptyWeight);
-        public float BasicEmptyweightMoment { get; set; }
-        public int ZeroFuelWeight { get; set; }
-        public float ZeroFuelWeightArm => (ZeroFuelWeightMoment / ZeroFuelWeight);
-        public float ZeroFuelWeightMoment { get; set; }
-        public int FuelLoad { get; set; }
-        public float FuelLoadMoment => (FuelLoad * FuelLoadArm);
-        public float FuelLoadArm { get; set; }
-        public int RampWeight { get; set; }
-        public float RampWeightArm => (RampWeightMoment / RampWeight);
-        public float RampWeightMoment { get; set; }
-        public int LessFuelForTaxiWeight { get; set; }
-        public float LessFuelForTaxiArm => (LessFuelForTaxiMoment / LessFuelForTaxiWeight);
-        public float LessFuelForTaxiMoment { get; set; }
-        public int TakeOffWeight { get; set; }
-        public float TakeOffWeightArm => (TakeOffWeightMoment / TakeOffWeight);
-        public float TakeOffWeightMoment { get; set; }
-        public int LessFuelToDestination { get; set; }
-        public int LandingWeight { get; set; }
-        public float LandingWeightArm => (LandingWeightMoment / LandingWeight);
-        public float LandingWeightMoment { get; set; }
+        public double BasicEmptyWeight { get; set; }
+        public double BasicEmptyWeightArm => (BasicEmptyweightMoment / BasicEmptyWeight);
+        public double BasicEmptyweightMoment { get; set; }
+        public double ZeroFuelWeight { get; set; }
+        public double ZeroFuelWeightArm => (ZeroFuelWeightMoment / ZeroFuelWeight);
+        public double ZeroFuelWeightMoment { get; set; }
+        public double FuelLoad { get; set; }
+        public double FuelLoadMoment { get; set; }
+        public double FuelLoadArm { get; set; }
+        public double RampWeight { get; set; }
+        public double RampWeightArm => (RampWeightMoment / RampWeight);
+        public double RampWeightMoment { get; set; }
+        public double LessFuelForTaxiWeight { get; set; }
+        public double LessFuelForTaxiArm => (LessFuelForTaxiMoment / LessFuelForTaxiWeight);
+        public double LessFuelForTaxiMoment { get; set; }
+        public double TakeOffWeight { get; set; }
+        public double TakeOffWeightArm => (TakeOffWeightMoment / TakeOffWeight);
+        public double TakeOffWeightMoment { get; set; }
+        public double LessFuelToDestination { get; set; }
+        public double LandingWeight { get; set; }
+        public double LandingWeightArm => (LandingWeightMoment / LandingWeight);
+        public double LandingWeightMoment { get; set; }
 
         //Max and min values
-        public int MaxZeroFuelWeight { get; set; }
-        public int MaxRampWeight { get; set; }
-        public int MaxTakeOffWeight { get; set; }
-        public int MaxLandingWeight { get; set; }
-        public float ZeroFuelWeightForwardCG { get; set; }
-        public float ZeroFuelWeightAftCG { get; set; }
-        public float TakeoffWeightForwardCG { get; set; }
-        public float TakeoffWeightAftCG { get; set; }
-        public float LandingWeightForwardCG { get; set; }
-        public float LandingWeightAftCG { get; set; }
+        public double MaxZeroFuelWeight { get; set; }
+        public double MaxRampWeight { get; set; }
+        public double MaxTakeOffWeight { get; set; }
+        public double MaxLandingWeight { get; set; }
+        public double ZeroFuelWeightForwardCG { get; set; }
+        public double ZeroFuelWeightAftCG { get; set; }
+        public double TakeoffWeightForwardCG { get; set; }
+        public double TakeoffWeightAftCG { get; set; }
+        public double LandingWeightForwardCG { get; set; }
+        public double LandingWeightAftCG { get; set; }
 
         //Foreign Key info for payload items
         [ForeignKey("PayloadItemId")]
