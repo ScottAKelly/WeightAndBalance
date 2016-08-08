@@ -21,17 +21,10 @@ namespace AircraftBalance.BusinessLogic
 
             return new Payload(arm, weight, moment);
         }
-        
+
         //public static double Calculate(Payload payload, Aircraft aircraft)
         //{
         //    var plane = _svc.GetAircraftByID(aircraft.AircraftId);
-
-        //    //var zeroFuelAftCg = aircraft.ZeroFuelWeightAftCG;
-        //    //var zeroFuelFwdCg = aircraft.ZeroFuelWeightForwardCG;
-        //    //var takeoffAftCg = aircraft.TakeoffWeightAftCG;
-        //    //var takeoffFwdCg = aircraft.TakeoffWeightForwardCG;
-        //    //var landingAftCg = aircraft.LandingWeightAftCG;
-        //    //var landingFwdCg = aircraft.LandingWeightForwardCG;
 
         //    var zeroFuelCg = aircraft.FuelLoadArm;
         //    var takeoffCg = aircraft.RampWeightArm;
@@ -51,14 +44,16 @@ namespace AircraftBalance.BusinessLogic
         //    aircraft.TakeOffWeightMoment = (aircraft.RampWeightMoment - aircraft.LessFuelForTaxiMoment);
         //    aircraft.LandingWeightMoment = (aircraft.LandingWeight * aircraft.LandingWeightArm);
 
+        //    return zeroFuelCg;
+        //    return takeoffCg;
+        //    return landingCg;
 
         //}
 
-        
 
 
 
-        //Calculation example from Dave:
+
 
         //class PayloadItem
         //{
@@ -86,9 +81,9 @@ namespace AircraftBalance.BusinessLogic
         //{
         //    public static Payload CreateFromItems(IEnumerable<PayloadItem> items)
         //    {
-        //        var arm = items.Average(i => i.Arm);
         //        var weight = items.Sum(i => i.Weight);
         //        var moment = items.Sum(i => i.Moment);
+        //        var arm = moment / weight;
 
         //        return new Payload(arm, weight, moment);
         //    }
