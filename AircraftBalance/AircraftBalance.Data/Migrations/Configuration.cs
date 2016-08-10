@@ -1,6 +1,7 @@
 namespace AircraftBalance.Data.Migrations
 {
     using System;
+    using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
@@ -26,10 +27,9 @@ namespace AircraftBalance.Data.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
 
+            var Aircraft = new List<Aircraft>
+            {
 
-
-            context.Aircraft.AddOrUpdate(
-                p => p.AircraftName,
                 new Aircraft
                 {
                     AircraftId = 1,
@@ -45,11 +45,9 @@ namespace AircraftBalance.Data.Migrations
                     MaxZeroFuelWeight = 15000,
                     MaxLandingWeight = 18700,
                     FuelLoadArm = 326.9228f,
-                });
+                },
 
 
-            context.Aircraft.AddOrUpdate(
-                p => p.AircraftName,
                 new Aircraft
                 {
                     AircraftId = 2,
@@ -65,11 +63,9 @@ namespace AircraftBalance.Data.Migrations
                     MaxZeroFuelWeight = 0,
                     MaxLandingWeight = 0,
                     FuelLoadArm = 0.0f,
-                });
+                },
 
 
-            context.Aircraft.AddOrUpdate(
-                p => p.AircraftName,
                 new Aircraft
                 {
                     AircraftId = 3,
@@ -85,11 +81,9 @@ namespace AircraftBalance.Data.Migrations
                     MaxZeroFuelWeight = 0,
                     MaxLandingWeight = 0,
                     FuelLoadArm = 0.0f,
-                });
+                },
 
 
-            context.Aircraft.AddOrUpdate(
-                p => p.AircraftName,
                 new Aircraft
                 {
                     AircraftId = 4,
@@ -105,11 +99,9 @@ namespace AircraftBalance.Data.Migrations
                     MaxZeroFuelWeight = 0,
                     MaxLandingWeight = 0,
                     FuelLoadArm = 0.0f,
-                });
+                },
 
 
-            context.Aircraft.AddOrUpdate(
-                p => p.AircraftName,
                 new Aircraft
                 {
                     AircraftId = 5,
@@ -125,11 +117,9 @@ namespace AircraftBalance.Data.Migrations
                     MaxZeroFuelWeight = 0,
                     MaxLandingWeight = 0,
                     FuelLoadArm = 0.0f,
-                });
+                },
 
 
-            context.Aircraft.AddOrUpdate(
-                p => p.AircraftName,
                 new Aircraft
                 {
                     AircraftId = 6,
@@ -145,11 +135,10 @@ namespace AircraftBalance.Data.Migrations
                     MaxZeroFuelWeight = 0,
                     MaxLandingWeight = 0,
                     FuelLoadArm = 0.0f,
-                });
+                },
 
 
-            context.Aircraft.AddOrUpdate(
-                p => p.AircraftName,
+
                 new Aircraft
                 {
                     AircraftId = 7,
@@ -165,8 +154,11 @@ namespace AircraftBalance.Data.Migrations
                     MaxZeroFuelWeight = 0,
                     MaxLandingWeight = 0,
                     FuelLoadArm = 0.0f,
-                });
-
+                }
+            };
+            Aircraft.ForEach(s => context.Aircraft.Add(s));
+            context.SaveChanges();
         }
     }
 }
+

@@ -28,14 +28,14 @@ namespace AircraftBalance.Controllers
             return View(vm);
         }
 
-        [HttpPost]
-        public ActionResult Calculate(Aircraft aircraft, Payload payload)
-        {
-            var plane = _svc.GetAircraftByID(aircraft.AircraftId);
+        //[HttpPost]
+        //public ActionResult Calculate(Aircraft aircraft, Payload payload)
+        //{
+        //    var plane = _svc.GetAircraftByID(aircraft.AircraftId);
 
-            _calc.CalculateZeroFuelCG(payload, aircraft);
+        //    _calc.CalculateZeroFuelCG(payload, aircraft);
             
 
-        }
+        //}
     }
 }

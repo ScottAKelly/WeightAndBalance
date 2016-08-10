@@ -120,6 +120,10 @@
     <Compile Include="Migrations\201607252032388_addedConstructors.Designer.cs">
       <DependentUpon>201607252032388_addedConstructors.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201608101506351_seedPlanes.cs" />
+    <Compile Include="Migrations\201608101506351_seedPlanes.Designer.cs">
+      <DependentUpon>201608101506351_seedPlanes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Payload.cs" />
     <Compile Include="PayloadItem.cs" />
@@ -135,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201607252032388_addedConstructors.resx">
       <DependentUpon>201607252032388_addedConstructors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608101506351_seedPlanes.resx">
+      <DependentUpon>201608101506351_seedPlanes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

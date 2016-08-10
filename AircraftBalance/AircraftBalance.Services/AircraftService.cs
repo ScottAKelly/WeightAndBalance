@@ -44,7 +44,8 @@ namespace AircraftBalance.Services
                         ZeroFuelWeight = e.ZeroFuelWeight,
                         MaxZeroFuelWeight = e.MaxZeroFuelWeight,
                         ZeroFuelWeightMoment = e.ZeroFuelWeightMoment
-                    });
+                    })
+                    .ToArray();
             }
         }
 

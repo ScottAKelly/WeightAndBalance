@@ -62,5 +62,7 @@ namespace AircraftBalance.Models
         public float PayloadItemMoment { get; set; }
         public float PayloadItemArm { get; set; }
 
+        public IEnumerable<Aircraft> Aircraft { get; set; }
+
     }
 }
