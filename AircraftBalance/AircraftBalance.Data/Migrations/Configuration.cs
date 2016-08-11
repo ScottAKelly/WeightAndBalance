@@ -4,13 +4,41 @@ namespace AircraftBalance.Data.Migrations
     using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
+    using System.Data.Entity.Validation;
     using System.Linq;
-
+    using System.Text;
     internal sealed class Configuration : DbMigrationsConfiguration<AircraftBalance.Data.IdentityModel.AircraftBalanceDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+        }
+
+        private void SaveChanges(DbContext context)
+        {
+            try
+            {
+                context.SaveChanges();
+            }
+            catch (DbEntityValidationException ex)
+            {
+                StringBuilder sb = new StringBuilder();
+
+                foreach (var failure in ex.EntityValidationErrors)
+                {
+                    sb.AppendFormat("{0} failed validation\n", failure.Entry.Entity.GetType());
+                    foreach (var error in failure.ValidationErrors)
+                    {
+                        sb.AppendFormat("- {0} : {1}", error.PropertyName, error.ErrorMessage);
+                        sb.AppendLine();
+                    }
+                }
+
+                throw new DbEntityValidationException(
+                    "Entity Validation Failed - errors follow:\n" +
+                    sb.ToString(), ex
+                ); // Add the original exception as the innerException
+            }
         }
 
         protected override void Seed(AircraftBalance.Data.IdentityModel.AircraftBalanceDbContext context)
@@ -27,7 +55,7 @@ namespace AircraftBalance.Data.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
 
-            var Aircraft = new List<Aircraft>
+            var aircraft = new List<Aircraft>
             {
 
                 new Aircraft
@@ -51,9 +79,9 @@ namespace AircraftBalance.Data.Migrations
                 new Aircraft
                 {
                     AircraftId = 2,
-                    AircraftName = "",
-                    AircraftMake = "",
-                    AircraftModel = "",
+                    AircraftName = "Example Name 1",
+                    AircraftMake = "Example Make 1",
+                    AircraftModel = "Example Model 1",
                     BasicEmptyWeight = 0,
                     BasicEmptyweightMoment = 0,
                     LessFuelForTaxiWeight = 0,
@@ -69,9 +97,9 @@ namespace AircraftBalance.Data.Migrations
                 new Aircraft
                 {
                     AircraftId = 3,
-                    AircraftName = "",
-                    AircraftMake = "",
-                    AircraftModel = "",
+                    AircraftName = "Example Name 2",
+                    AircraftMake = "Example Make 2",
+                    AircraftModel = "Example Model 2",
                     BasicEmptyWeight = 0,
                     BasicEmptyweightMoment = 0,
                     LessFuelForTaxiWeight = 0,
@@ -87,9 +115,9 @@ namespace AircraftBalance.Data.Migrations
                 new Aircraft
                 {
                     AircraftId = 4,
-                    AircraftName = "",
-                    AircraftMake = "",
-                    AircraftModel = "",
+                    AircraftName = "Example Name 3",
+                    AircraftMake = "Example Make 3",
+                    AircraftModel = "Example Model 3",
                     BasicEmptyWeight = 0,
                     BasicEmptyweightMoment = 0,
                     LessFuelForTaxiWeight = 0,
@@ -105,9 +133,9 @@ namespace AircraftBalance.Data.Migrations
                 new Aircraft
                 {
                     AircraftId = 5,
-                    AircraftName = "",
-                    AircraftMake = "",
-                    AircraftModel = "",
+                    AircraftName = "Example Name 4",
+                    AircraftMake = "Example Make 4",
+                    AircraftModel = "Example Model 4",
                     BasicEmptyWeight = 0,
                     BasicEmptyweightMoment = 0,
                     LessFuelForTaxiWeight = 0,
@@ -123,9 +151,9 @@ namespace AircraftBalance.Data.Migrations
                 new Aircraft
                 {
                     AircraftId = 6,
-                    AircraftName = "",
-                    AircraftMake = "",
-                    AircraftModel = "",
+                    AircraftName = "Example Name 5",
+                    AircraftMake = "Example Make 5",
+                    AircraftModel = "Example Model 5",
                     BasicEmptyWeight = 0,
                     BasicEmptyweightMoment = 0,
                     LessFuelForTaxiWeight = 0,
@@ -142,9 +170,9 @@ namespace AircraftBalance.Data.Migrations
                 new Aircraft
                 {
                     AircraftId = 7,
-                    AircraftName = "",
-                    AircraftMake = "",
-                    AircraftModel = "",
+                    AircraftName = "Example Name 6",
+                    AircraftMake = "Example Make 6",
+                    AircraftModel = "Example Model 6",
                     BasicEmptyWeight = 0,
                     BasicEmptyweightMoment = 0,
                     LessFuelForTaxiWeight = 0,
@@ -156,8 +184,8 @@ namespace AircraftBalance.Data.Migrations
                     FuelLoadArm = 0.0f,
                 }
             };
-            Aircraft.ForEach(s => context.Aircraft.Add(s));
-            context.SaveChanges();
+            aircraft.ForEach(s => context.Aircraft.Add(s));
+            SaveChanges(context);
         }
     }
 }
