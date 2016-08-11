@@ -38,5 +38,11 @@ namespace AircraftBalance.Controllers
         //{
         //    _plane = _svc.GetAircraftByID(vm.AircraftId);
         //}
+
+        public ActionResult ChooseAircraft()
+        {
+            return View("Index");
+        }
+
     }
 }
