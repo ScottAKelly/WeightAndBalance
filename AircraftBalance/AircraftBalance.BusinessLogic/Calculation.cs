@@ -44,7 +44,7 @@ namespace AircraftBalance.BusinessLogic
 
         //}
 
-        public double CalculateZeroFuelCG(Payload payload, Aircraft aircraft)
+        public static double CalculateZeroFuelCG(Payload payload, Aircraft aircraft)
         {
             var zeroFuelCg = aircraft.ZeroFuelWeightArm;
 
@@ -56,7 +56,7 @@ namespace AircraftBalance.BusinessLogic
             return zeroFuelCg;
         }
 
-        public double CalculateTakeoffCG(Payload payload, Aircraft aircraft)
+        public static double CalculateTakeoffCG(Payload payload, Aircraft aircraft)
         {
             var takeoffCg = aircraft.TakeOffWeightArm;
 

@@ -26,9 +26,6 @@ namespace AircraftBalance.Controllers
         // GET: Aircraft
         public ActionResult Index()
         {
-            //ViewBag.AircraftMake = new SelectList(_db.Aircraft, "AircraftId", "AircraftMake", aircraft.AircraftId);
-            //ViewBag.AircraftName = new SelectList(_db.Aircraft, "AircraftId", "AircraftName", aircraft.AircraftId);
-            //ViewBag.AircraftModel = new SelectList(_db.Aircraft, "AircraftId", "AircraftModel", aircraft.AircraftId);
             var viewModel = new AircraftViewModel
             {
                 Aircraft = _db.Aircraft.ToList()
@@ -36,10 +33,19 @@ namespace AircraftBalance.Controllers
             return View(viewModel);
         }
 
-        public ActionResult Calculate()
+        [HttpPost]
+        public ActionResult Index(AircraftViewModel viewModel)
         {
-            var vm = new AircraftViewModel();
-            return View(vm);
+            var plane = _svc.GetAircraftByID(viewModel.AircraftId);
+            // Now use inputs from viewModel and constants from the object to calculate.  Call calculation methods.
+            plane = _plane;
+            return View(viewModel);
+        }
+
+        public ActionResult Calculate(Aircraft plane)
+        {
+            plane = _plane;
+            return View();
         }
 
         //[HttpPost]

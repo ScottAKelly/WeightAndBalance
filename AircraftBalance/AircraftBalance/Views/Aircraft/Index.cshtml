@@ -7,7 +7,7 @@
 <h2>Weight and Balance Calculator</h2>
 
 
-@using (Html.BeginForm("ChooseAircraft", "Aircraft" )) 
+@using (Html.BeginForm("Index", "Aircraft" )) 
 {
     @Html.AntiForgeryToken()
     
@@ -22,7 +22,7 @@
         </div>
 
         <div class="form-group">
-            <input type="submit" value="Next" class="btn btn-primary" />
+            <input type="submit" value="Next" class="btn btn-primary"/>
         </div>
     </div>
 }
