@@ -13,18 +13,27 @@ namespace AircraftBalance.Controllers
 {
     public class AircraftController : Controller
     {
-        private AircraftBalanceDbContext _db = new AircraftBalanceDbContext();
+        private readonly AircraftBalanceDbContext _db;
         private Aircraft _plane = new Aircraft();
         private readonly AircraftService _svc = new AircraftService();
         private readonly Calculation _calc = new Calculation();
 
-        // GET: Aircraft
-        public ActionResult Index(Aircraft aircraft)
+        public AircraftController()
         {
-            ViewBag.AircraftMake = new SelectList(_db.Aircraft, "AircraftId", "AircraftMake", aircraft.AircraftId);
-            ViewBag.AircraftName = new SelectList(_db.Aircraft, "AircraftId", "AircraftName", aircraft.AircraftId);
-            ViewBag.AircraftModel = new SelectList(_db.Aircraft, "AircraftId", "AircraftModel", aircraft.AircraftId);
-            return View();
+            _db = new AircraftBalanceDbContext();
+        }
+
+        // GET: Aircraft
+        public ActionResult Index()
+        {
+            //ViewBag.AircraftMake = new SelectList(_db.Aircraft, "AircraftId", "AircraftMake", aircraft.AircraftId);
+            //ViewBag.AircraftName = new SelectList(_db.Aircraft, "AircraftId", "AircraftName", aircraft.AircraftId);
+            //ViewBag.AircraftModel = new SelectList(_db.Aircraft, "AircraftId", "AircraftModel", aircraft.AircraftId);
+            var viewModel = new AircraftViewModel
+            {
+                Aircraft = _db.Aircraft.ToList()
+            };
+            return View(viewModel);
         }
 
         public ActionResult Calculate()

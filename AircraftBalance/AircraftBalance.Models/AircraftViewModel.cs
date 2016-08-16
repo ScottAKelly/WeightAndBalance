@@ -10,7 +10,7 @@ namespace AircraftBalance.Models
 {
     public class AircraftViewModel
     {
-        public IEnumerable<Aircraft> Aircraft { get; }
+        public IEnumerable<Aircraft> Aircraft { get; set; }
         //Basic Properties
         public int AircraftId { get; set; }
         [Display(Name = "Aircraft Name")]

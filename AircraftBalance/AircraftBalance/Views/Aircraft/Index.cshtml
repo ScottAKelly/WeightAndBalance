@@ -15,31 +15,14 @@
         <h4>Select the aircraft to work with</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        
         <div class="form-group">
-            @Html.LabelFor(model => model.AircraftMake, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("AircraftId", ViewBag.AircraftMake as SelectList, new { htmlAttributes = new { @class = "form-control" } })
-            </div>
+            @Html.LabelFor(m => m.AircraftId)
+            @Html.DropDownListFor(m => m.Aircraft, new SelectList(Model.Aircraft, "AircraftId", "AircraftName"), "", new { @class = "form-control"})
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.AircraftModel, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("AircraftId", ViewBag.AircraftModel as SelectList, new { htmlAttributes = new { @class = "form-control col-md-4" } })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.AircraftName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("AircraftId", ViewBag.AircraftName as SelectList, new { htmlAttributes = new { @class = "form-control" } })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Next" class="btn btn-default" />
-            </div>
+            <input type="submit" value="Next" class="btn btn-primary" />
         </div>
     </div>
 }
