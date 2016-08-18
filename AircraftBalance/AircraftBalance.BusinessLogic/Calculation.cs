@@ -1,18 +1,13 @@
 ﻿using AircraftBalance.Data;
-using AircraftBalance.Models;
-using AircraftBalance.Services;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AircraftBalance.BusinessLogic
 {
     public class Calculation
     {
 
-        public static Payload CreateFromItems(IEnumerable<PayloadItem> items)
+        public Payload CreateFromItems(IEnumerable<PayloadItem> items)
         {
             var weight = items.Sum(i => i.PayloadItemWeight);
             var moment = items.Sum(i => i.PayloadItemMoment);

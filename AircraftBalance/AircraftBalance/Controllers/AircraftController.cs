@@ -14,13 +14,16 @@ namespace AircraftBalance.Controllers
     public class AircraftController : Controller
     {
         private readonly AircraftBalanceDbContext _db;
-        private Aircraft _plane = new Aircraft();
-        private readonly AircraftService _svc = new AircraftService();
-        private readonly Calculation _calc = new Calculation();
+        private readonly Aircraft _plane;
+        private readonly AircraftService _svc;
+        private readonly Calculation _calc;
 
         public AircraftController()
         {
             _db = new AircraftBalanceDbContext();
+            _plane = new Aircraft();
+            _svc = new AircraftService();
+            _calc = new Calculation();
         }
 
         // GET: Aircraft
@@ -36,9 +39,9 @@ namespace AircraftBalance.Controllers
         [HttpPost]
         public ActionResult Index(AircraftViewModel viewModel)
         {
-            var plane = _svc.GetAircraftByID(viewModel.AircraftId);
+            var plane = _db.Aircraft.SingleOrDefault(e => e.AircraftId == viewModel.Plane);
+            var payload = _calc.CreateFromItems(viewModel.PayloadItems);
             // Now use inputs from viewModel and constants from the object to calculate.  Call calculation methods.
-            plane = _plane;
             return View(viewModel);
         }
 
