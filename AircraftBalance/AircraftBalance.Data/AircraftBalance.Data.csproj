@@ -124,6 +124,14 @@
     <Compile Include="Migrations\201608101506351_seedPlanes.Designer.cs">
       <DependentUpon>201608101506351_seedPlanes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201608221845509_updatedConstructors.cs" />
+    <Compile Include="Migrations\201608221845509_updatedConstructors.Designer.cs">
+      <DependentUpon>201608221845509_updatedConstructors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608221918553_update.cs" />
+    <Compile Include="Migrations\201608221918553_update.Designer.cs">
+      <DependentUpon>201608221918553_update.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Payload.cs" />
     <Compile Include="PayloadItem.cs" />
@@ -142,6 +150,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201608101506351_seedPlanes.resx">
       <DependentUpon>201608101506351_seedPlanes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608221845509_updatedConstructors.resx">
+      <DependentUpon>201608221845509_updatedConstructors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608221918553_update.resx">
+      <DependentUpon>201608221918553_update.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

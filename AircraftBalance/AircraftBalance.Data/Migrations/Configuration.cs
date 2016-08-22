@@ -1,11 +1,9 @@
 namespace AircraftBalance.Data.Migrations
 {
-    using System;
     using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Data.Entity.Validation;
-    using System.Linq;
     using System.Text;
     internal sealed class Configuration : DbMigrationsConfiguration<AircraftBalance.Data.IdentityModel.AircraftBalanceDbContext>
     {
@@ -57,7 +55,6 @@ namespace AircraftBalance.Data.Migrations
 
             var aircraft = new List<Aircraft>
             {
-
                 new Aircraft
                 {
                     AircraftId = 1,
@@ -74,7 +71,6 @@ namespace AircraftBalance.Data.Migrations
                     MaxLandingWeight = 18700,
                     FuelLoadArm = 326.9228f,
                 },
-
 
                 new Aircraft
                 {
@@ -93,7 +89,6 @@ namespace AircraftBalance.Data.Migrations
                     FuelLoadArm = 0.0f,
                 },
 
-
                 new Aircraft
                 {
                     AircraftId = 3,
@@ -110,7 +105,6 @@ namespace AircraftBalance.Data.Migrations
                     MaxLandingWeight = 0,
                     FuelLoadArm = 0.0f,
                 },
-
 
                 new Aircraft
                 {
@@ -129,7 +123,6 @@ namespace AircraftBalance.Data.Migrations
                     FuelLoadArm = 0.0f,
                 },
 
-
                 new Aircraft
                 {
                     AircraftId = 5,
@@ -147,7 +140,6 @@ namespace AircraftBalance.Data.Migrations
                     FuelLoadArm = 0.0f,
                 },
 
-
                 new Aircraft
                 {
                     AircraftId = 6,
@@ -164,8 +156,6 @@ namespace AircraftBalance.Data.Migrations
                     MaxLandingWeight = 0,
                     FuelLoadArm = 0.0f,
                 },
-
-
 
                 new Aircraft
                 {
@@ -186,6 +176,29 @@ namespace AircraftBalance.Data.Migrations
             };
             aircraft.ForEach(s => context.Aircraft.Add(s));
             SaveChanges(context);
+
+            var aircraftOneItems = new List<PayloadItem>
+            {
+                new PayloadItem("Seat One", 143.9, 1),
+                new PayloadItem("Seat Two", 143.9, 1),
+                new PayloadItem("Seat Three", 229.5, 1),
+                new PayloadItem("Seat Four", 229.5, 1),
+                new PayloadItem("Seat Five", 283.7, 1),
+                new PayloadItem("Seat Six", 283.7, 1),
+                new PayloadItem("Seat Seven", 327.2, 1),
+                new PayloadItem("Seat Eight", 327.2, 1),
+                new PayloadItem("Seat Nine", 186.2, 1),
+                new PayloadItem("Seat Ten", 205.91, 1),
+                new PayloadItem("Seat Eleven", 357.5, 1),
+                new PayloadItem("Nav Charts", 158.1, 1),
+                new PayloadItem("L/H Forward Refreshments", 173.15, 1),
+                new PayloadItem("Tailcone", 431.0, 1),
+                new PayloadItem("RH Forward Closet", 169.89, 1),
+                new PayloadItem("Aft Closet", 374.0, 1),
+                
+            };
+            aircraftOneItems.ForEach(s => context.PayloadItems.Add(s));
+            context.SaveChanges();
         }
     }
 }

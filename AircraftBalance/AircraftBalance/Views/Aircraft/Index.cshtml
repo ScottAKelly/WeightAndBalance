@@ -7,22 +7,31 @@
 <h2>Weight and Balance Calculator</h2>
 
 
-@using (Html.BeginForm("Index", "Aircraft" )) 
+@using (Html.BeginForm("Index", "Aircraft"))
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Select the aircraft to work with</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        
-        <div class="form-group">
-            @Html.LabelFor(m => m.AircraftId)
-            @Html.DropDownListFor(m => m.Aircraft, new SelectList(Model.Aircraft, "AircraftId", "AircraftName"), "", new { @class = "form-control"})
-        </div>
 
         <div class="form-group">
-            <input type="submit" value="Next" class="btn btn-primary"/>
+            @Html.LabelFor(m => m.AircraftName)
+            @Html.DropDownListFor(m => m.Aircraft, new SelectList(Model.Aircraft, "AircraftId", "AircraftName"), "--Select Aircraft--", new { onchange = "this.form.submit();" })
+            @Html.ValidationMessageFor(m => m.Aircraft)
+        </div>
+
+        @foreach (var item in Model.PayloadItems)
+        {
+            <div class="form-group">
+                @Html.LabelFor(m => item.PayloadItemName)
+                @Html.EditorFor(m => item.PayloadItemWeight)
+            </div>
+        }
+
+        <div class="form-group">
+            <input type="submit" value="Next" class="btn btn-primary" />
         </div>
     </div>
 }
