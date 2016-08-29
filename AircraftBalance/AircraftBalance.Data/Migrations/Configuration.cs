@@ -53,8 +53,8 @@ namespace AircraftBalance.Data.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
 
-            var aircraft = new List<Aircraft>
-            {
+            context.Aircraft.AddOrUpdate(
+                e => e.AircraftModel,
                 new Aircraft
                 {
                     AircraftId = 1,
@@ -173,13 +173,11 @@ namespace AircraftBalance.Data.Migrations
                     MaxLandingWeight = 0,
                     FuelLoadArm = 0.0f,
                 }
-            };
-            aircraft.ForEach(s => context.Aircraft.Add(s));
-            SaveChanges(context);
+            );
 
-            var aircraftOneItems = new List<PayloadItem>
-            {
-                new PayloadItem("Seat One", 143.9, 1),
+            context.PayloadItems.AddOrUpdate(
+                e => e.AircraftId,
+                new PayloadItem( "Seat One", 143.9, 1 ),
                 new PayloadItem("Seat Two", 143.9, 1),
                 new PayloadItem("Seat Three", 229.5, 1),
                 new PayloadItem("Seat Four", 229.5, 1),
@@ -194,11 +192,8 @@ namespace AircraftBalance.Data.Migrations
                 new PayloadItem("L/H Forward Refreshments", 173.15, 1),
                 new PayloadItem("Tailcone", 431.0, 1),
                 new PayloadItem("RH Forward Closet", 169.89, 1),
-                new PayloadItem("Aft Closet", 374.0, 1),
-                
-            };
-            aircraftOneItems.ForEach(s => context.PayloadItems.Add(s));
-            context.SaveChanges();
+                new PayloadItem("Aft Closet", 374.0, 1)
+            );
         }
     }
 }

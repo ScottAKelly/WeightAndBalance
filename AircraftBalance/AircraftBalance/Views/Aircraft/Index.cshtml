@@ -18,24 +18,64 @@
 
         <div class="form-group">
             @Html.LabelFor(m => m.AircraftName)
-            @Html.DropDownListFor(m => m.Aircraft, new SelectList(Model.Aircraft, "AircraftId", "AircraftName"), "--Select Aircraft--", new { onchange = "this.form.submit();" })
+            @Html.DropDownListFor(m => m.Aircraft, new SelectList(Model.Aircraft, "AircraftId", "AircraftName"), "--Select Aircraft--", new { @class = "form-control" })
             @Html.ValidationMessageFor(m => m.Aircraft)
         </div>
-
-        @foreach (var item in Model.PayloadItems)
-        {
-            <div class="form-group">
-                @Html.LabelFor(m => item.PayloadItemName)
-                @Html.EditorFor(m => item.PayloadItemWeight)
-            </div>
-        }
 
         <div class="form-group">
             <input type="submit" value="Next" class="btn btn-primary" />
         </div>
+
+        @if (Model != null)
+        {
+            <hr />
+            <h2>Display after selecting the item</h2>
+            foreach (var item in Model.PayloadItems)
+            {
+            <div class="form-group">
+                @Html.LabelFor(model => item.PayloadItemWeight, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => item.PayloadItemWeight, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => item.PayloadItemWeight, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            }
+        }
     </div>
+    }
 }
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+
+    @*<script type="text/javascript">
+     $(function(){
+
+          $("#Aircraft").change(function() {
+
+                var t = $(this).val();
+
+                if (t !== "") {
+                    $.post("@Url.Action("GetItems", "Aircraft")?val=" + t, function(res) {
+                        if (res.Success === "true") {
+
+                          //enable the text boxes and set the value
+
+                            $("#PayloadItemName").val(res.Data.PayloadItemName);
+                            $("#PayloadItemWeight").prop('disabled', false).val(res.Data.PayloadItemWeight);
+
+                        } else {
+                            alert("Error getting data!");
+                        }
+                    });
+                } else {
+                    //Let's clear the values and disable :)
+                    $("input.editableItems").val('').prop('disabled', true);
+                }
+
+            });
+     });
+
+    </script>*@
+
 }

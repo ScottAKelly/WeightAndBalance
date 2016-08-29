@@ -2,10 +2,7 @@
 using AircraftBalance.Data;
 using AircraftBalance.Models;
 using AircraftBalance.Services;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using static AircraftBalance.Data.IdentityModel;
 
@@ -45,22 +42,17 @@ namespace AircraftBalance.Controllers
             return View(viewModel);
         }
 
-        public ActionResult Calculate(Aircraft plane)
+        [HttpPost]
+        public ActionResult GetItems(int? val)
         {
-            plane = _plane;
-            return View();
+            if (val != null)
+            {
+                //Values are hard coded for demo. you may replae with values 
+                // coming from your db/service based on the passed in value ( val.Value)
+
+                return Json(new { Success = "true", Data = _db.PayloadItems.Where(e => e.AircraftId == val)});
+            }
+            return Json(new { Success = "false" });
         }
-
-        //[HttpPost]
-        //public ActionResult Calculate(AircraftViewModel vm)
-        //{
-        //    _plane = _svc.GetAircraftByID(vm.AircraftId);
-        //}
-
-        public ActionResult ChooseAircraft()
-        {
-            return View("Index");
-        }
-
     }
 }

@@ -17,6 +17,9 @@ namespace AircraftBalance.Data
         [Display(Name = "Aircraft")]
         public int AircraftId { get; set; }
 
+        public PayloadItem()
+        {
+        }
         public PayloadItem(string itemName, double arm, int aircraftId)
         {
             AircraftId = aircraftId;
