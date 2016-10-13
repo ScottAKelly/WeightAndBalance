@@ -177,7 +177,7 @@ namespace AircraftBalance.Data.Migrations
 
             context.PayloadItems.AddOrUpdate(
                 e => e.AircraftId,
-                new PayloadItem( "Seat One", 143.9, 1 ),
+                new PayloadItem("Seat One", 143.9, 1),
                 new PayloadItem("Seat Two", 143.9, 1),
                 new PayloadItem("Seat Three", 229.5, 1),
                 new PayloadItem("Seat Four", 229.5, 1),

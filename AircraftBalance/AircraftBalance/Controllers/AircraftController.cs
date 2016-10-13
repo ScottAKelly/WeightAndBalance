@@ -38,6 +38,9 @@ namespace AircraftBalance.Controllers
         {
             var plane = _db.Aircraft.SingleOrDefault(e => e.AircraftId == viewModel.Plane);
             var payload = _calc.CreateFromItems(viewModel.PayloadItems);
+            ViewBag.ZeroFuelCG = _calc.CalculateZeroFuelCG(viewModel, payload);
+            ViewBag.TakeOffCG = _calc.CalculateTakeoffCG(viewModel, payload);
+            ViewBag.LandingCG = _calc.CalculateLandingCG(viewModel, payload);
             // Now use inputs from viewModel and constants from the object to calculate.  Call calculation methods.
             return View(viewModel);
         }

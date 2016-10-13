@@ -7,6 +7,7 @@ namespace AircraftBalance.BusinessLogic
 {
     public class Calculation
     {
+        private Payload _payload;
 
         public Payload CreateFromItems(IEnumerable<PayloadItem> items)
         {
@@ -17,50 +18,27 @@ namespace AircraftBalance.BusinessLogic
             return new Payload(arm, weight, moment);
         }
 
-        //public static double Calculate(Payload payload, Aircraft aircraft)
-        //{
-        //    var plane = _svc.GetAircraftByID(aircraft.AircraftId);
-
-            
-        //    var landingCg = aircraft.LandingWeightArm;
-
-        //    // Calculate all the weights.
-        //    aircraft.ZeroFuelWeight = (aircraft.BasicEmptyWeight + payload.PayloadWeight);
-        //    aircraft.RampWeight = (aircraft.ZeroFuelWeight + aircraft.FuelLoad);
-        //    aircraft.TakeOffWeight = (aircraft.RampWeight - aircraft.LessFuelForTaxiWeight);
-        //    aircraft.LandingWeight = (aircraft.TakeOffWeight - aircraft.LessFuelToDestination);
-
-
-        //    // Calculate all of the moments.
-        //    aircraft.ZeroFuelWeightMoment = (aircraft.BasicEmptyweightMoment + payload.PayloadMoment);
-        //    aircraft.FuelLoadMoment = (aircraft.FuelLoad * aircraft.FuelLoadArm);
-        //    aircraft.RampWeightMoment = (aircraft.ZeroFuelWeightMoment + aircraft.FuelLoadMoment);
-        //    aircraft.TakeOffWeightMoment = (aircraft.RampWeightMoment - aircraft.LessFuelForTaxiMoment);
-        //    aircraft.LandingWeightMoment = (aircraft.LandingWeight * aircraft.LandingWeightArm);
-
-        //}
-
-        public static double CalculateZeroFuelCG(AircraftViewModel viewModel)
+        public double CalculateZeroFuelCG(AircraftViewModel viewModel, Payload payload)
         {
             var zeroFuelCg = viewModel.ZeroFuelWeightArm;
 
-            viewModel.ZeroFuelWeight = (viewModel.BasicEmptyWeight + viewModel.PayloadWeight);
-            viewModel.ZeroFuelWeightMoment = (viewModel.BasicEmptyweightMoment + viewModel.PayloadMoment);
+            viewModel.ZeroFuelWeight = (viewModel.BasicEmptyWeight + payload.PayloadWeight);
+            viewModel.ZeroFuelWeightMoment = (viewModel.BasicEmptyweightMoment + payload.PayloadMoment);
 
             zeroFuelCg = (viewModel.ZeroFuelWeight + viewModel.ZeroFuelWeightMoment);
 
             return zeroFuelCg;
         }
 
-        public static double CalculateTakeoffCG(AircraftViewModel viewModel)
+        public double CalculateTakeoffCG(AircraftViewModel viewModel, Payload payload)
         {
             var takeoffCg = viewModel.TakeOffWeightArm;
 
-            viewModel.ZeroFuelWeight = (viewModel.BasicEmptyWeight + viewModel.PayloadWeight);
+            viewModel.ZeroFuelWeight = (viewModel.BasicEmptyWeight + payload.PayloadWeight);
             viewModel.RampWeight = (viewModel.ZeroFuelWeight + viewModel.FuelLoadWeight);
             viewModel.TakeOffWeight = (viewModel.RampWeight - viewModel.LessFuelForTaxiWeight);
             
-            viewModel.ZeroFuelWeightMoment = (viewModel.BasicEmptyweightMoment + viewModel.PayloadMoment);
+            viewModel.ZeroFuelWeightMoment = (viewModel.BasicEmptyweightMoment + payload.PayloadMoment);
             viewModel.FuelLoadMoment = (viewModel.FuelLoadWeight * viewModel.FuelLoadArm);
             viewModel.RampWeightMoment = (viewModel.ZeroFuelWeightMoment + viewModel.FuelLoadMoment);
             viewModel.TakeOffWeightMoment = (viewModel.RampWeightMoment - viewModel.LessFuelForTaxiMoment);
@@ -70,16 +48,16 @@ namespace AircraftBalance.BusinessLogic
             return takeoffCg;
         }
 
-        public double CalculateLandingCG(AircraftViewModel viewModel)
+        public double CalculateLandingCG(AircraftViewModel viewModel, Payload payload)
         {
             var landingCg = viewModel.LandingWeightArm;
 
-            viewModel.ZeroFuelWeight = (viewModel.BasicEmptyWeight + viewModel.PayloadWeight);
+            viewModel.ZeroFuelWeight = (viewModel.BasicEmptyWeight + payload.PayloadWeight);
             viewModel.RampWeight = (viewModel.ZeroFuelWeight + viewModel.FuelLoadWeight);
             viewModel.TakeOffWeight = (viewModel.RampWeight - viewModel.LessFuelForTaxiWeight);
             viewModel.LandingWeight = (viewModel.TakeOffWeight - viewModel.LessFuelToDestination);
           
-            viewModel.ZeroFuelWeightMoment = (viewModel.BasicEmptyweightMoment + viewModel.PayloadMoment);
+            viewModel.ZeroFuelWeightMoment = (viewModel.BasicEmptyweightMoment + payload.PayloadMoment);
             viewModel.FuelLoadMoment = (viewModel.FuelLoadWeight * viewModel.FuelLoadArm);
             viewModel.RampWeightMoment = (viewModel.ZeroFuelWeightMoment + viewModel.FuelLoadMoment);
             viewModel.TakeOffWeightMoment = (viewModel.RampWeightMoment - viewModel.LessFuelForTaxiMoment);
